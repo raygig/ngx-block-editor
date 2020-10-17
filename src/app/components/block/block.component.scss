@@ -1,0 +1,60 @@
+.block {
+  position: absolute;
+  display: block;
+  outline: none;
+  cursor: pointer;
+
+  .content-editable {
+    outline: none;
+    position: relative;
+    z-index: 1;
+  }
+
+  &.editable .content-editable {
+    cursor: text;
+  }
+
+  .content {
+    flex-direction: column;
+    height: 100%;
+    display: flex;
+    border: 1px dashed #c5c5c5;
+    position: relative;
+
+    fs-html-editor {
+      width: 100%;
+    }
+
+    &.vertical-align-center {
+      justify-content: center;
+    }
+
+    &.vertical-align-bottom {
+      justify-content: flex-end;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+  }
+}
+
+:host ::ng-deep {
+  fs-html-editor {
+    .bottom-line,
+    .fr-toolbar {
+      display: none !important;
+    }
+
+    .fr-wrapper {
+      background: none !important;
+      border: none !important;
+    }
+  }
+
+  .moveable-line:not(.moveable-rotation-line):not(.moveable-guideline) {
+    background: transparent !important;
+  }
+}

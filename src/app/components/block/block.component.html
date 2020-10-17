@@ -1,0 +1,43 @@
+<div
+  #element
+  class="block"
+  [ngClass]="{ editable: editable }">
+  <div
+    #content
+    class="content"
+    [style.zIndex]="block.index"
+    [style.borderColor]="block.borderColor"
+    [style.borderStyle]="block.borderColor ? 'solid' : 'dashed'"
+    [style.textAlign]="block.horizontalAlign"
+    [style.fontStyle]="block.italic ? 'italic' : ''"
+    [style.fontSize]="block.fontSize + 'px'"
+    [style.lineHeight]="block.lineHeight + 'px'"
+    [style.color]="block.fontColor"
+    [style.fontWeight]="block.bold ? 'bold' : ''"
+    [style.textDecoration]="block.underline ? 'underline' : ''"
+    [style.paddingTop]="block.paddingTop + 'px'"
+    [style.paddingBottom]="block.paddingBottom + 'px'"
+    [style.paddingLeft]="block.paddingLeft + 'px'"
+    [style.paddingRight]="block.paddingRight + 'px'"
+    [style.clipPath]="block.clipPath"
+    [style.backgroundColor]="block.backgroundColor"
+    [style.borderBottomLeftRadius]="block.shapeRadius && block.shapeBottomLeft === 'round' ? block.shapeRadius + 'px' : ''"
+    [style.borderBottomRightRadius]="block.shapeRadius && block.shapeBottomRight === 'round' ? block.shapeRadius + 'px' : ''"
+    [style.borderTopRightRadius]="block.shapeRadius && block.shapeTopRight === 'round' ? block.shapeRadius + 'px' : ''"
+    [style.borderTopLeftRadius]="block.shapeRadius && block.shapeTopLeft === 'round' ? block.shapeRadius + 'px' : ''"
+    [ngClass]="{
+      'editable': editable,
+      'vertical-align-center': block.verticalAlign === 'center',
+      'vertical-align-bottom': block.verticalAlign === 'bottom'
+    }">
+    <img [src]="block.imageUrl" *ngIf="block.imageUrl">
+    <div
+      #contentEditable
+      contenteditable="true"
+      class="content-editable"
+      [innerHTML]="block.content">
+    </div>
+  </div>
+</div>
+
+

@@ -1,6 +1,15 @@
 @import '../tools/assets/playground.scss';
 @import '~@firestitch/message/styles';
 @import "~@firestitch/drawer/styles";
+@import "~@firestitch/html-editor/styles";
+@import "~@firestitch/style/styles";
+@import "~@firestitch/file/styles";
 @import '../src/app/styles.scss';
 
+@import "~froala-editor/css/froala_editor.pkgd";
+@import "~froala-editor/css/froala_style";
+
+
 @include fs-drawer($mat-blue);
+@include fs-html-editor($mat-blue);
+@include fs-file($mat-blue);
