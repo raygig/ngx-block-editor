@@ -1,1 +1,9 @@
-<fs-component></fs-component>
+<fs-block-editor [config]="config">
+  <ng-template
+    fsBlockEditorSidebarPanel
+    label="Custom"
+    [show]="selectedBlocks.length"
+    let-block="block">
+    {{block|json}}
+  </ng-template>
+</fs-block-editor>

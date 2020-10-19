@@ -26,10 +26,7 @@
             "styles": [
               "playground/styles.scss"
             ],
-            "scripts": [],
-            "allowedCommonJsDependencies": [
-              "highlight.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -150,7 +147,7 @@
               "tsConfig": "src/tsconfig.lib.prod.json"
             }
           }
-},
+        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
